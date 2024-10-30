@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>テイアルマ✨</title>
+    <link rel="stylesheet" href="test.css" />
+  </head>
+  <body>
+    <!-- <div style="background-color: black"> -->
+    <!-- <div class="background-foto" style=""></div> -->
+    <div class="login-container">
+      <h1 class="happy"><font color="violet">🌷HAPPY BIRTHDAY🌷</font></h1>
+      <h1 class="login-text">✨LOGIN✨</h1>
+      <form id="loginForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" placeholder="username" required />
+
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          placeholder="Masukkan password"
+          required
+        />
+
+        <button type="button" onclick="validateLogin()">Login</button>
+        <p id="errorMessage"></p>
+      </form>
+    </div>
+    <!-- </div> -->
+
+    <script src="test.js"></script>
+  </body>
+</html>

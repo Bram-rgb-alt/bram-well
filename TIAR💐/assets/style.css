@@ -1,0 +1,340 @@
+@import url("https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Nunito:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@300;400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+  box-sizing: border-box;
+}
+.preload {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.preload p {
+  color: #fff;
+  animation: load 3s ease;
+  -webkit-animation: load 3s ease;
+}
+
+@keyframes load {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.main {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+}
+
+.open,
+.main-content {
+  height: 100%;
+  width: 100%;
+}
+.open {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+  background-color: rgba(109, 2, 2, 0.354);
+  background-size: cover;
+  z-index: 999;
+}
+.open div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.open div.lope {
+  height: 70px;
+  width: 70px;
+  margin: 20px 0;
+  background: rgb(134, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  animation: anm 1s infinite ease;
+  -webkit-animation: anm 1s infinite ease;
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+}
+
+.open i {
+  font-size: 2.3em;
+  color: red;
+}
+
+.open h3 {
+  margin-top: -10px;
+  font-weight: 500;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.open.zoom-in {
+  transition: 1.5s ease-out all;
+  opacity: 0;
+  transform: scale(100) translateY(-20px);
+  filter: brightness(0);
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+  /* z-index: 2999; */
+  /* display: none; */
+}
+
+.bg-love {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  overflow: hidden;
+  top: -50px;
+  bottom: 0;
+}
+.bg-love div {
+  width: 10px;
+  display: inline-block;
+  animation: fall 5s linear infinite;
+  -webkit-animation: fall 5s linear infinite;
+}
+@keyframes fall {
+  0% {
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+  }
+  100% {
+    transform: translateY(110vh);
+    -webkit-transform: translateY(110vh);
+    -moz-transform: translateY(110vh);
+    -ms-transform: translateY(110vh);
+    -o-transform: translateY(110vh);
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #e60073, 0 0 20px #e60073;
+  }
+  to {
+    box-shadow: 0 0 10px #fff, 0 0 20px #ff4da6, 0 0 30px #ff4da6,
+      0 0 40px #ff4da6;
+  }
+}
+
+.bg-love i {
+  color: rgb(236, 15, 15);
+  opacity: 0.1;
+}
+
+.main-content {
+  background: rgb(0, 0, 0);
+}
+.content {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  padding: 17vh 18vw;
+  /* z-index: 1; */
+  transition: 0.5s ease all;
+  opacity: 1;
+  animation: anm-fade 0.5s ease;
+  -webkit-animation: anm-fade 0.5s ease;
+}
+.content:not(.show) {
+  display: none;
+}
+@keyframes anm-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+.foto-container {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+  margin: auto;
+  animation: anm-up 0.7s ease;
+  -webkit-animation: anm-up 0.7s ease;
+
+  animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+.foto-container .stiker1 {
+  position: absolute;
+  height: 10vh;
+  filter: drop-shadow(3px 3px 0 rgba(0, 0, 0, 0.5));
+  bottom: 0;
+  left: -20px;
+  transform: rotate(-10deg);
+}
+
+.foto-container .stiker2 {
+  position: absolute;
+  height: 10vh;
+  filter: drop-shadow(3px 3px 0 rgba(0, 0, 0, 0.5));
+  top: -10px;
+  right: -10px;
+  transform: rotate(10deg);
+}
+.foto-container .tape {
+  position: absolute;
+  width: 29px;
+  transform: rotate(50deg);
+}
+
+.foto-container .tape1 {
+  top: -25px;
+  left: -3px;
+}
+
+.foto-container .tape2 {
+  bottom: -23px;
+  right: -3px;
+}
+
+.content .foto {
+  height: 40vh;
+  margin: auto;
+  display: block;
+  padding: 10px 10px 20px 10px;
+  background: rgb(0, 0, 0);
+  margin-bottom: 20px;
+  box-shadow: 5px 5px 20px rgb(0, 0, 0, 0.5);
+}
+
+@keyframes anm-up {
+  from {
+    opacity: 0;
+    transform: translateY(70px);
+    -webkit-transform: translateY(70px);
+    -moz-transform: translateY(70px);
+    -ms-transform: translateY(70px);
+    -o-transform: translateY(70px);
+  }
+}
+
+.text-container {
+  max-height: calc(100% - 40vh);
+  overflow: auto;
+}
+
+.text {
+  max-height: 100%;
+  text-align: justify;
+  color: white;
+  text-shadow: 1px 1px 3px rgb(0, 0, 0);
+}
+
+.content {
+  padding: 10vh 17vw 17vh;
+}
+
+.swal2-popup {
+  padding-bottom: 0;
+  border-radius: 0.5rem;
+  background: rgb(35, 35, 35);
+}
+.swal2-title {
+  font-size: 1.3em;
+  font-weight: 600;
+  padding-top: 30px;
+  color: white;
+}
+.swal2-actions {
+  margin: 0 !important;
+  padding: 20px 0;
+  padding-top: 10px;
+}
+.swal2-actions button,
+button:active,
+button:focus {
+  min-width: 80px;
+  border-radius: 10px !important;
+  box-shadow: none !important;
+  background: white !important;
+  color: black !important;
+  font-weight: 700 !important;
+}
+textarea {
+  resize: none;
+  color: white !important;
+}
+
+.btn-container {
+  position: fixed;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  z-index: 999999999999;
+  transition: 0.5s ease all;
+}
+
+.btn-container:not(.show) {
+  transform: translateY(70px);
+}
+
+.btn-container .btn {
+  background: white;
+  padding: 7px;
+  width: fit-content;
+  min-width: 130px;
+  font-weight: 700;
+  font-size: 1rem;
+  text-align: center;
+  margin: auto;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.btn-container .btn:active {
+  transform: scale(0.95);
+}
+
+.btn-container .btn:not(.show) {
+  display: none;
+}

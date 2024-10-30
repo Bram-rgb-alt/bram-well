@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>テイアルマ✨</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.4/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="preload"><p>Loading...</p></div>
+      <div class="open">
+        <div class="ilop">
+          <h3>TEKAN INI TIARR</h3>
+          <div class="lope"><i class="love material-icons-sharp"><img src="./assets/img/123-removebg-preview.ico" alt=""></i></div>
+        </div>
+      </div>
+      <div class="main-content">
+        <div
+          class="background"
+//background-image: url('https://dekatutorial.github.io/v/btmbn/bg.jpg');//
+          style="
+           
+            background-image: url('./assets/img/ya.jpg');
+          "
+        ></div>
+        <div class="bg-love"></div>
+        <div class="btn-container">
+          <div class="btn btn-next show">Next</div>
+          <div class="btn btn-message">Send Message</div>
+        </div>
+      </div>
+    </div>
+    <script>
+      konten = [
+        {
+          foto: "./assets/img/1.jpg",
+          stiker1: "./assets/img/lop2.png",
+          stiker2: "./assets/img/lop2.png",
+          ucapan: "Selamat Ulang Tahun Tiar, Semoga hari ini sangat menyenangkan untukmu. Semoga kamu selalu diberkati dengan kesehatan dan kebahagiaan. Semoga semua impianmu terwujud di tahun ini. Jadilah dirimu sendiri dan terus berjuang mengejar mimpimu. Semoga tahun ini membawa banyak keberuntungan dan sukacita bagimu. Selamat merayakan ulang tahunmu yang berharga!Selamat Ulang Tahun! Semoga hari ini sangat menyenangkan untukmu.",
+        },
+        {
+          foto: "./assets/img/2.jpg",
+          stiker1: "./assets/img/lop2.png",
+          stiker2: "./assets/img/lop2.png",
+          ucapan: "Happy Birthdayy Kecikkk, Semoga Apa yang di cita-citakan Tercapai yaa, Semangat Kuliah nyaa, Rindu rumah boleh tapii ingat juga kuliah nyaa",
+        },
+        { 
+          foto: "./assets/img/3.jpg",
+          stiker1: "./assets/img/bckttulip.png",
+          stiker2: "./assets/img/bckttulip.png",
+          ucapan: "Hai Tiarr, 30/10/2024-22:12pm aku menerima ke jelasan yg aku nanti walaupun kejelasan bukan sesuatu yg baik menurut ku tapi mungkin baik untuk kita, aku berharap semoga ultah mu kali ini menjadi awal dari semua kebaikan yg akan terjadi kepadamu ini lah project penting yg terus aku kerjakan disaat aku nongkrong, aku tidur lama, bahkan saat sedang telfonan bersama mu sampai larut malam, tolong kirimin aku pesan ya kalau kau dh baca inii😉😉",
+        },
+      ];
+
+      musik = "./assets/audio/Sezairi - It's You.mp3";
+      nomorWhatsapp = "6281361163339"; // diawali 62
+
+      async function tanyaMusik() {
+        await swalo
+          .fire({
+            title: "Putar Musik",
+            confirmButtonText: "Ya",
+            denyButtonText: "Tidak",
+            showDenyButton: true,
+          })
+          .then((result) => {
+            result.isConfirmed ? audio.play() : audio.pause();
+          });
+
+        start();
+      }
+
+      async function kirimpesan() {
+        var { value: pesanku } = await swalo.fire({
+          title: "Tulis pesan",
+          input: "textarea",
+          confirmButtonText: "Kirim",
+        });
+        if (pesanku) {
+          await swalo.fire("Kirim pesannya ke wa aku ya");
+          if (!nomorWhatsapp.startsWith("62")) nomorWhatsapp = "6281361163339";
+          location.assign(`https://wa.me/${nomorWhatsapp}?text=${pesanku}`);
+        } else {
+          await swalo.fire({ title: "Jangan dikosongin ya" });
+          kirimpesan();
+        }
+      }
+    </script>
+    <script src="./assets/app.js"></script>
+  </body>
+</html>
