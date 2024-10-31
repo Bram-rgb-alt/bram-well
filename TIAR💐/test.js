@@ -1,4 +1,7 @@
 // script.js
+document.addEventListener('contextmenu', function(e) {
+  e.preventDefault();
+});
 function validateLogin() {
   // Username dan password yang sudah ditentukan
   const correctUsername = "tulipbiru";
