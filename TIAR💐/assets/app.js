@@ -133,6 +133,50 @@ function tampilLope() {
   }
 }
 
+// batass script asli dan tambahan
+
 window.onload = function () {
   document.querySelector(".preload").remove();
 };
+
+// Mencegah reload dengan event beforeunload
+window.addEventListener("beforeunload", function (e) {
+  e.preventDefault();
+  e.returnValue = "";
+});
+
+// Mendeteksi reload dan redirect
+document.addEventListener("DOMContentLoaded", function () {
+  // Mengecek apakah halaman di-reload
+  if (performance.navigation.type === 1) {
+    window.location.href = "Tiarlogin.html"; // Ganti 'other.html' dengan nama file HTML tujuan
+  }
+});
+
+// Mencegah cache history
+window.onpageshow = function (event) {
+  if (event.persisted) {
+    window.location.reload();
+  }
+};
+
+// Mencegah tombol back
+window.history.pushState(null, null, window.location.href);
+window.onpopstate = function () {
+  window.history.pushState(null, null, window.location.href);
+};
+
+// Mencegah shortcut keyboard reload
+document.addEventListener("keydown", function (e) {
+  // Mencegah Ctrl + R
+  if (e.ctrlKey && e.key === "r") {
+    e.preventDefault();
+    window.location.href = "Tiarlogin.html"; // Ganti 'other.html' dengan nama file HTML tujuan
+  }
+
+  // Mencegah F5
+  if (e.key === "F5") {
+    e.preventDefault();
+    window.location.href = "Tiarlogin.html"; // Ganti 'other.html' dengan nama file HTML tujuan
+  }
+});
