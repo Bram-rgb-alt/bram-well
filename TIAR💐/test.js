@@ -66,6 +66,7 @@
       (e.ctrlKey &&
         (e.key?.toLowerCase() === "i" ||
           e.key?.toLowerCase() === "c" ||
+         e.key?.toLowerCase() === "u" ||
           e.key?.toLowerCase() === "j"))
     ) {
       e.preventDefault();
