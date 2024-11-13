@@ -84,7 +84,7 @@
 
     // Obfuscated credentials check
     const _0xc = (s) => btoa(encodeURIComponent(s));
-    const _0xd = _0x1a2b3c === "tulipbiru" && _0x4d5e6f === "240206";
+    const _0xd = _0x1a2b3c === "satutahunsatubulansatuhari" && _0x4d5e6f === "111";
 
     if (_0xd) {
       _0x7g8h9i.style.color = "yellow";
